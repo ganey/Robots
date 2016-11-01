@@ -1,6 +1,6 @@
 <?php
 
-use Healey\Robots\Robots;
+use Ganey\Robots\Robots;
 
 class RobotsTest extends PHPUnit_Framework_TestCase
 {

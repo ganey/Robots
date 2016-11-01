@@ -1,4 +1,4 @@
-<?php namespace Healey\Robots;
+<?php namespace Ganey\Robots;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,7 +18,7 @@ class RobotsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('healey/robots');
+        $this->package('ganey/robots');
     }
 
     /**
@@ -36,7 +36,7 @@ class RobotsServiceProvider extends ServiceProvider
         $this->app->booting(function()
         {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('Robots', 'Healey\Robots\RobotsFacade');
+            $loader->alias('Robots', 'Ganey\Robots\RobotsFacade');
         });
     }
 

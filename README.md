@@ -20,14 +20,14 @@ As usual with Composer packages, there are two ways to install:
 
 You can install via Composer. Pick the "master" as the version of the package.
 
-    composer require healey/robots
+    composer require Ganey/robots
 
 Or add the following to your `composer.json` in the `require` section and then run `composer update` to install it.
 
 ```js
 {
     "require": {
-        "healey/robots": "dev-master"
+        "Ganey/robots": "dev-master"
     }
 }
 ```
@@ -39,7 +39,7 @@ Or add the following to your `composer.json` in the `require` section and then r
 Once installed via Composer you need to add the service provider. Do this by adding the following to the 'providers' section of the application config (usually `app/config/app.php`):
 
 ```php
-'Healey\Robots\RobotsServiceProvider',
+'Ganey\Robots\RobotsServiceProvider',
 ```
 
 Note that the facade allows you to use the class by simply calling `Robots::doSomething()`.
@@ -73,7 +73,7 @@ The code would look something like:
 
 ```php
 <?php
-use Healey\Robots\Robots;
+use Ganey\Robots\Robots;
 
 $robots = new Robots();
 $robots->addUserAgent('*');

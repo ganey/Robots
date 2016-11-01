@@ -1,4 +1,4 @@
-<?php namespace Healey\Robots;
+<?php namespace Ganey\Robots;
 
 class Robots
 {

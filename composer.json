@@ -1,10 +1,10 @@
 {
-    "name": "healey/robots",
+    "name": "Ganey/robots",
     "description": "Robots.txt Generator for Laravel 4 and 5",
     "authors": [
         {
-            "name": "James Healey",
-            "email": "jayhealey@gmail.com"
+            "name": "Michael Gane",
+            "email": "git@ganey.co.uk"
         }
     ],
     "require": {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Healey\\Robots": "src/"
+            "Ganey\\Robots": "src/"
         }
     },
     "minimum-stability": "stable"
