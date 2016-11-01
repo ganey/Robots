@@ -6,9 +6,9 @@ This is a fork of <https://github.com/jayhealey/Robots/> to be updated for Larav
 
 The original Robots class was written by *dragonfire1119* of TutsGlobal.com: <http://tutsglobal.com/topic/15-how-to-make-a-robotstxt-in-laravel-4/>
 
-The class itself (`Robots.php`) will work on any PHP 5.3+ site. It could easily be modified for 5.2 by removing the namespace.
+The class itself (`Robots.php`) will work on any PHP 5.4+ site. It could easily be modified for 5.2 by removing the namespace.
 
-This repository offers easy integration via Composer and includes service provider and a facade for Laravel 4+ alongside a set of PHPUnit tests.
+This repository offers easy integration via Composer and includes service provider and a facade for Laravel 5 alongside a set of PHPUnit tests.
 
 Checkout the `Robots.php` class for a full understanding of the functionality.
 
@@ -27,7 +27,7 @@ Or add the following to your `composer.json` in the `require` section and then r
 ```js
 {
     "require": {
-        "Ganey/robots": "dev-master"
+        "Ganey/robots": "~2.0"
     }
 }
 ```
@@ -39,7 +39,13 @@ Or add the following to your `composer.json` in the `require` section and then r
 Once installed via Composer you need to add the service provider. Do this by adding the following to the 'providers' section of the application config (usually `app/config/app.php`):
 
 ```php
-'Ganey\Robots\RobotsServiceProvider',
+Ganey\Robots\RobotsServiceProvider::class,
+```
+
+Add the facade to the 'aliases' section of the application config (usually `app/config/app.php`):
+
+```php
+'Robots'    => \Ganey\Robots\RobotsFacade::class
 ```
 
 Note that the facade allows you to use the class by simply calling `Robots::doSomething()`.
@@ -63,24 +69,6 @@ Route::get('robots.txt', function() {
 
     return Response::make(Robots::generate(), 200, array('Content-Type' => 'text/plain'));
 });
-```
-
-#### PHP 5.3+
-
-Add a rule in your `.htaccess` for `robots.txt` that points to a new script/template/controller/route/etc.
-
-The code would look something like:
-
-```php
-<?php
-use Ganey\Robots\Robots;
-
-$robots = new Robots();
-$robots->addUserAgent('*');
-$robots->addSitemap('sitemap.xml');
-
-header("HTTP/1.1 200 OK");
-echo $robots->generate();
 ```
 
 And that's it! You can show different `robots.txt` files depending on how simple or complicated you want it to be.
